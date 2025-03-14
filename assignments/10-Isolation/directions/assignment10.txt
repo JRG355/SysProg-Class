@@ -133,4 +133,22 @@ mount: /tmp/test_mount: permission denied.
 run './fake_root ip link add dummy0 type dummy'
 RTNETLINK answers: Operation not permitted
 
+QUESTIONS:
 
+1. How do user namespaces provide the illusion of having root privileges?
+User namespaces map the user to UID 0, which to an application means that the user is root.
+
+What is the purpose of UID/GID mapping in user namespaces?
+The mapping allows the processes to have some root privileges within the namespace but without actually having system-wide root privileges. 
+
+What limitations did you encounter when working with user namespaces?
+I wasn't actually able to do any real things on the system that a root user could do, like mounting filesystems.
+
+How might user namespaces be used in container technology?
+In containers it can be used to isolate users from each other so that each can work with their applications as though they have one system for themselves.
+
+What security implications do user namespaces have?
+If the namespaces are not set correctly, someone could execute malicious code that can run as root if it can escape from the container environment.
+
+Why are other namespace types typically not available to unprivileged users?
+Other namespace types, like mount or network, are not available because they would provide too much control over the system. That would cause security issues since anyone could alter the system and gain access to things that they shouldn't.
