@@ -152,3 +152,6 @@ If the namespaces are not set correctly, someone could execute malicious code th
 
 Why are other namespace types typically not available to unprivileged users?
 Other namespace types, like mount or network, are not available because they would provide too much control over the system. That would cause security issues since anyone could alter the system and gain access to things that they shouldn't.
+
+CONCLUSION:
+Namespaces are an interesting way to run applications in a safe environment without the extra overhead of a virtual machine. It is a fairly simple concept that has had huge consequences on application development and deployment, with the popularization of container systems like Docker.
