@@ -40,10 +40,9 @@ How do the UID mappings work?
 The parent copies the UID of the parent process into the uid_map for the parent's PID and sets that UID to be seen by the child process as 0, which is root.
 
 PART 3
-
 *** BEFORE ENTERING USER NAMESPACE ***
 === Process Information ===
-PID: 738648
+PID: 740188
 UID/GID: 945167614/1151600513
 Username: jrg355
 Groups: 1151600513 945102275 945104460 945117244 945121613 945131654 945132091 945134683 945134686 945136615 945151338 945161900 945173959 945181003 945181006 945184377 945192752 945192772 1151601049 1151604607 1151690096 1151761388 1151788533 1713816984 1713816996 1713822233
@@ -61,14 +60,14 @@ Bounding set =cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fset
 
 === Process List (as seen by this process) ===
 UID          PID    PPID  C STIME TTY          TIME CMD
-root           1       0  0 Feb26 ?        02:53:00 /sbin/init splash
+root           1       0  0 Feb26 ?        02:53:03 /sbin/init splash
 root           2       0  0 Feb26 ?        00:00:01 [kthreadd]
 root           3       2  0 Feb26 ?        00:00:00 [rcu_gp]
 root           4       2  0 Feb26 ?        00:00:00 [rcu_par_gp]
 
 *** AFTER ENTERING USER NAMESPACE ***
 === Process Information ===
-PID: 738663
+PID: 740203
 UID/GID: 65534/65534
 Username: nobody
 Groups: 65534
@@ -86,7 +85,7 @@ Bounding set =cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fset
 
 === Process List (as seen by this process) ===
 UID          PID    PPID  C STIME TTY          TIME CMD
-nobody         1       0  0 Feb26 ?        02:53:00 /sbin/init splash
+nobody         1       0  0 Feb26 ?        02:53:03 /sbin/init splash
 nobody         2       0  0 Feb26 ?        00:00:01 [kthreadd]
 nobody         3       2  0 Feb26 ?        00:00:00 [rcu_gp]
 nobody         4       2  0 Feb26 ?        00:00:00 [rcu_par_gp]
