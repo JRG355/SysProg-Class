@@ -1,7 +1,7 @@
 INTRODUCTION:
 Linux namespaces allow for processes to in isolation from other processes. The processes running within a namespace cannot see processes in other namespaces. This allows for control over what system resources the processes in those namespaces use.
 
-
+RUN TERMINAL COMMANDS
 PART 1
 
 1. run "id":
@@ -132,3 +132,5 @@ mount: /tmp/test_mount: permission denied.
 
 run './fake_root ip link add dummy0 type dummy'
 RTNETLINK answers: Operation not permitted
+
+
