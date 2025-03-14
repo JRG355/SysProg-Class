@@ -1,0 +1,31 @@
+PART 1
+
+1. run "id":
+uid=945167614(jrg355) gid=1151600513(domain users) groups=1151600513(domain users),945102275(coe software solidworks student),945104460(du-employees),945117244(du-staff),945121613(coe software university-wide access),945131654(fs-apps-share-rx),945132091(fs-apps-list),945134683(fs-fs-share-rx),945134686(fs-fs-list),945136615(du-adobelicensees),945151338(its-vdi-general-client),945161900(fs-fs-scripts-rx),945173959(fs-fs-istrategy-rx),945181003(fs-apps-hyperion-rx),945181006(fs-apps-oracle-rx),945184377(du_bi_ia_gifts_consumer),945192752(cci tux students),945192772(cci tux everyone),1151601049(banner_access),1151604607(adminstaff),1151690096(president_senate_rx),1151761388(transfer_facstaff_w),1151788533(sophosuser),1713816984(du-cci-students),1713816996(du-graduate-students),1713822233(du_bi_research_community_consumer)
+
+2. run "ls -la /proc/self/ns/":
+total 0
+dr-x--x--x 2 jrg355 domain users 0 Mar 14 13:13 .
+dr-xr-xr-x 9 jrg355 domain users 0 Mar 14 13:13 ..
+lrwxrwxrwx 1 jrg355 domain users 0 Mar 14 13:13 cgroup -> cgroup:[4026531835]
+lrwxrwxrwx 1 jrg355 domain users 0 Mar 14 13:13 ipc -> ipc:[4026531839]
+lrwxrwxrwx 1 jrg355 domain users 0 Mar 14 13:13 mnt -> mnt:[4026531841]
+lrwxrwxrwx 1 jrg355 domain users 0 Mar 14 13:13 net -> net:[4026531840]
+lrwxrwxrwx 1 jrg355 domain users 0 Mar 14 13:13 pid -> pid:[4026531836]
+lrwxrwxrwx 1 jrg355 domain users 0 Mar 14 13:13 pid_for_children -> pid:[4026531836]
+lrwxrwxrwx 1 jrg355 domain users 0 Mar 14 13:13 time -> time:[4026531834]
+lrwxrwxrwx 1 jrg355 domain users 0 Mar 14 13:13 time_for_children -> time:[4026531834]
+lrwxrwxrwx 1 jrg355 domain users 0 Mar 14 13:13 user -> user:[4026531837]
+lrwxrwxrwx 1 jrg355 domain users 0 Mar 14 13:13 uts -> uts:[4026531838]
+
+4. New bash shell, run "id":
+uid=65534(nobody) gid=65534(nogroup) groups=65534(nogroup)
+
+5. Examine namespace identifier, run "ls -la /proc/self/ns/user":
+lrwxrwxrwx 1 nobody nogroup 0 Mar 14 13:16 /proc/self/ns/user -> user:[4026532793]
+	-It's now changed from 4026531837 to 4026532793
+	-whoami does print "nobody"
+
+6. uid_map and gid_map are empty
+
+
