@@ -1,0 +1,22 @@
+[
+	{
+		"directory": "/home/andrew/SysProg-Class/assignments/6-RShell/starter",
+		"command": "gcc -Wall -Wextra -g -c dsh_cli.c",
+		"file": "/home/andrew/SysProg-Class/assignments/6-RShell/starter/dsh_cli.c"
+	},
+	{
+		"directory": "/home/andrew/SysProg-Class/assignments/6-RShell/starter",
+		"command": "gcc -Wall -Wextra -g -c dshlib.c",
+		"file": "/home/andrew/SysProg-Class/assignments/6-RShell/starter/dshlib.c"
+	},
+	{
+		"directory": "/home/andrew/SysProg-Class/assignments/6-RShell/starter",
+		"command": "gcc -Wall -Wextra -g -c rsh_cli.c",
+		"file": "/home/andrew/SysProg-Class/assignments/6-RShell/starter/rsh_cli.c"
+	},
+	{
+		"directory": "/home/andrew/SysProg-Class/assignments/6-RShell/starter",
+		"command": "gcc -Wall -Wextra -g -c rsh_server.c",
+		"file": "/home/andrew/SysProg-Class/assignments/6-RShell/starter/rsh_server.c"
+	}
+]
