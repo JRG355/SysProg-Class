@@ -89,3 +89,38 @@ nobody         1       0  0 Feb26 ?        02:53:03 /sbin/init splash
 nobody         2       0  0 Feb26 ?        00:00:01 [kthreadd]
 nobody         3       2  0 Feb26 ?        00:00:00 [rcu_gp]
 nobody         4       2  0 Feb26 ?        00:00:00 [rcu_par_gp]
+
+PART 4
+
+run "./fake_root id":
+uid=0(root) gid=0(root) groups=0(root),65534(nogroup)
+Parent process: UID=945167614, GID=1151600513, PID=741313
+Created child process with PID: 741314
+Child exited with status: 0
+
+run './fake_root bash -c "id && whoami && ls -la /proc/self/ns/':uid=0(root) gid=0(root) groups=0(root),65534(nogroup)
+root
+total 0
+dr-x--x--x 2 root root 0 Mar 14 16:34 .
+dr-xr-xr-x 9 root root 0 Mar 14 16:34 ..
+lrwxrwxrwx 1 root root 0 Mar 14 16:34 cgroup -> cgroup:[4026531835]
+lrwxrwxrwx 1 root root 0 Mar 14 16:34 ipc -> ipc:[4026531839]
+lrwxrwxrwx 1 root root 0 Mar 14 16:34 mnt -> mnt:[4026531841]
+lrwxrwxrwx 1 root root 0 Mar 14 16:34 net -> net:[4026531840]
+lrwxrwxrwx 1 root root 0 Mar 14 16:34 pid -> pid:[4026531836]
+lrwxrwxrwx 1 root root 0 Mar 14 16:34 pid_for_children -> pid:[4026531836]
+lrwxrwxrwx 1 root root 0 Mar 14 16:34 time -> time:[4026531834]
+lrwxrwxrwx 1 root root 0 Mar 14 16:34 time_for_children -> time:[4026531834]
+lrwxrwxrwx 1 root root 0 Mar 14 16:34 user -> user:[4026532793]
+lrwxrwxrwx 1 root root 0 Mar 14 16:34 uts -> uts:[4026532795]
+Parent process: UID=945167614, GID=1151600513, PID=741634
+Created child process with PID: 741635
+Child exited with status: 0
+
+run './fake_root touch ~/root_test_file
+ls -la ~/root_test_file':
+The owner of the file in the real system is me, the user. Running './fake_root ls -la ~/root_test_file' shows that it sees the owner as root.
+
+PART 5
+
+run './fake_root bash -c "mount -t tmpfs none /tmp/test_mount"'
