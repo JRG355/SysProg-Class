@@ -124,3 +124,7 @@ The owner of the file in the real system is me, the user. Running './fake_root l
 PART 5
 
 run './fake_root bash -c "mount -t tmpfs none /tmp/test_mount"'
+mount: /tmp/test_mount: permission denied.
+
+run './fake_root ip link add dummy0 type dummy'
+RTNETLINK answers: Operation not permitted
